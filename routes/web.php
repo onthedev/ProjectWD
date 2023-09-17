@@ -30,7 +30,11 @@ Route::middleware([
 
     Route::get('/emp', [empController::class, "index"])->name('emp');
     Route::get('/mng', [mngController::class, "index"])->name('mng');
-    Route::get('/manager/employee', [mngEmpController::class, "index"])->name('mngEmp');
+    Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
+    Route::get('/manager/employee/check', [mngController::class, "manager_emp_check"])->name('manager_emp_check');
+    Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
+    Route::get('/manager/employee/manageemp', [mngController::class, "manage_emp"])->name('manage_emp');
+
 });
 
 

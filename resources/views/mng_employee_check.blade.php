@@ -16,7 +16,7 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <nav>
                         <ul>
-                            <li><a href="#">check employee attendance</a></li>
+                            <li><a href="{{ route('manager_emp_check') }}">check employee attendance</a></li>
                             <li><a href="{{ route('manager_emp_emp') }}">employee</a></li>
                         </ul>
                     </nav>

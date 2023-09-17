@@ -22,3 +22,7 @@ ul {
   li a:hover {
     background-color: #111;
   }
+.manage_emp{
+    float: right;
+    margin: 15px 15px;
+}
