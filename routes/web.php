@@ -28,11 +28,11 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [RoleController::class, "index"])->name('dashboard');
 
-
     Route::get('/emp', [empController::class, "index"])->name('emp');
     Route::get('/mng', [mngController::class, "index"])->name('mng');
     Route::get('/manager/employee', [mngEmpController::class, "index"])->name('mngEmp');
 });
+
 
 
 
