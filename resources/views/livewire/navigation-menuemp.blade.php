@@ -2,7 +2,6 @@
     <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
         <!-- Primary Navigation Menu -->
         <header class="text-center py-5">
-            {{-- <h1 class="text-2xl font-bold">Prasit Shabu</h1> --}}
             <h1 style="font-size: 30px">Prasit Shabu</h1>
             <p class="text-sm text-gray-600">Priabdeesud Co., Ltd.</p>
         </header>

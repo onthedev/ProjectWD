@@ -5,6 +5,7 @@ use App\Http\Controllers\empController;
 use App\Http\Controllers\mngController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\mngEmpController;
+use App\Models\Tambon;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,10 +34,9 @@ Route::middleware([
     Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
     Route::get('/manager/employee/check', [mngController::class, "manager_emp_check"])->name('manager_emp_check');
     Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
-    Route::get('/manager/employee/manageemp', [mngController::class, "manage_emp"])->name('manage_emp');
-
+    Route::get('/manager/employee/manage', [mngController::class, "manage_emp"])->name('manage_emp');
+    Route::post('/manager/employee/manageemp', [mngController::class, "addTeam"])->name('addTeam');
 });
-
 
 
 

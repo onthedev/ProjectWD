@@ -1,14 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <style>
+        @import url( {{asset('css/auth.css')}});
+    </style>
+</head>
+<body>
 <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-            <x-authentication-card-logo />
-        </x-slot>
-
+<x-authentication-card>
         <x-validation-errors class="mb-4" />
-
         <form method="POST" action="{{ route('register') }}">
             @csrf
-
             <div>
                 <x-label for="name" value="{{ __('Name') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
@@ -66,3 +72,5 @@
         </form>
     </x-authentication-card>
 </x-guest-layout>
+</body>
+</html>

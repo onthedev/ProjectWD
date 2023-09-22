@@ -23,17 +23,27 @@
                         </ul>
                     </nav>
                 </div>
+                <div class="container pt-10">
                 <a class="manage_emp" href="{{ route('manage_emp') }}">เพิ่มนักงาน</a>
-                <table class="table">
+                <table class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">รหัสพนักงาน</th>
-                        <th scope="col">ชื่อ</th>
-                        <th scope="col">นามสกุล</th>
-                        <th scope="col">#</th>
+                        <th class="text-center" scope="col">รหัสพนักงาน</th>
+                        <th class="text-center" scope="col">ชื่อ</th>
+                        <th class="text-center" scope="col">นามสกุล</th>
+                        <th class="text-center" scope="col"></th>
                       </tr>
                     </thead>
+                    @foreach ($emp as $emp)
+                    <tr>
+                        <td class="text-center">{{ $emp->emp_id }}</td>
+                        <td class="text-center">{{ $emp->fname }}</td>
+                        <td class="text-center">{{ $emp->lname }}</td>
+                        <td class="text-center"><a class="detail_emp">ข้อมูล</a></td>
+                    </tr>
+                    @endforeach
             </div>
+        </div>
         </div>
     </x-app-layout>
 

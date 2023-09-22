@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Personnel;
+use App\Models\Addr;
+
 
 class mngController extends Controller
 {
@@ -13,12 +15,34 @@ class mngController extends Controller
         return view('mng_employee_check');
     }
     public function manager_emp_emp(){
-        return view('mng_employee_emp');
+        $emp = personnel::all();
+        return view('mng_employee_emp', compact('emp'));
     }
     public function manage_emp(){
-        return view('manage_emp');
+        return view("manage_emp");
     }
     public function mng_employee(){
         return view('mng_employee');
+    }
+    public function addTeam(Request $request){
+        $personel = new personnel;
+        $personel->fname = $request->input('fname');
+        $personel->lname = $request->input('lname');
+        $personel->emp_id = $request->input('emp_id');
+        $personel->salary = $request->input('salary');
+        $personel->position = $request->input('position');
+        $personel->telno = $request->input('tel');
+        $personel->save();
+
+        $addr = new addr;
+        $addr->homeID=$request->input('homeID');
+        $addr->villagename=$request->input('villagename');
+        $addr->Tambon=$request->input('Tambon');
+        $addr->Amphoe=$request->input('amphoe');
+        $addr->ChangWat=$request->input('changwat');
+        $addr->ZipCode=$request->input('zipcode');
+        $addr->save();
+
+        return redirect()->route('manage_emp');
     }
 }
