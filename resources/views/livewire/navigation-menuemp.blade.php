@@ -1,11 +1,15 @@
 <div>
     <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
         <!-- Primary Navigation Menu -->
-        <header class="text-center py-5">
-            <h1 style="font-size: 30px">Prasit Shabu</h1>
-            <p class="text-sm text-gray-600">Priabdeesud Co., Ltd.</p>
-        </header>
-
+        <div class="flex items-center justify-center mt-3 mx-auto max-w-screen-md">
+            <a href="{{ route('mng') }}">
+                <img class="block h-20 w-auto" src="{{ asset('logo.svg') }}" alt="Your SVG Image">
+            </a>
+            <div class="ml-5">
+                <h1 class="text-2xl mb-2">Prasit Shabu</h1>
+                <p class="text-sm text-gray-600">Priabdeesud Co., Ltd.</p>
+            </div>
+        </div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex">
