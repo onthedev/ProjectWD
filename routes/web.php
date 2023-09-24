@@ -36,8 +36,14 @@ Route::middleware([
     Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
     Route::get('/manager/employee/manage', [mngController::class, "manage_emp"])->name('manage_emp');
     Route::post('/manager/employee/manageemp', [mngController::class, "addTeam"])->name('addTeam');
+    Route::get('/manager/addempbyfile', [mngController::class, "addByFile"])->name('addByFile');
 });
 
 
 
-
+Route::get('/tambon', function () {
+    $provinces = Tambon::select('province')->distinct()->get();
+    $amphoes = Tambon::select('amphoe')->distinct()->get();
+    $tambons = Tambon::select('tambon')->distinct()->get();
+    return view("tambon/index", compact('provinces','amphoes','tambons'));
+});

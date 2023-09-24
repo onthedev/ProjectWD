@@ -17,11 +17,9 @@ use App\Http\Controllers\API\TambonController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-
-
+});
 Route::get('/provinces', [ TambonController::class , 'getProvinces' ]);
-Route::get('/amphoes', [TambonController::class , 'getAmphoes' ]);
+Route::get('/api/amphoes', [TambonController::class , 'getAmphoes' ]);
 Route::get('/tambons', [ TambonController::class , 'getTambons' ]);
 Route::get('/zipcodes', [TambonController::class, 'getZipcodes'] );
-});
 

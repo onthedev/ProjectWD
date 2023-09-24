@@ -24,13 +24,15 @@ class mngController extends Controller
     public function mng_employee(){
         return view('mng_employee');
     }
+    public function addByFile(){
+        return view('addbyfile');
+    }
     public function addTeam(Request $request){
         $personel = new personnel;
         $personel->fname = $request->input('fname');
         $personel->lname = $request->input('lname');
         $personel->emp_id = $request->input('emp_id');
         $personel->salary = $request->input('salary');
-        $personel->position = $request->input('position');
         $personel->telno = $request->input('tel');
         $personel->save();
 

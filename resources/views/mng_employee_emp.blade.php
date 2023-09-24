@@ -31,7 +31,7 @@
                         <th class="text-center" scope="col">รหัสพนักงาน</th>
                         <th class="text-center" scope="col">ชื่อ</th>
                         <th class="text-center" scope="col">นามสกุล</th>
-                        <th class="text-center" scope="col"></th>
+                        <th class="text-center" scope="col">เบอร์โทรศัพท์</th>
                       </tr>
                     </thead>
                     @foreach ($emp as $emp)
@@ -39,6 +39,7 @@
                         <td class="text-center">{{ $emp->emp_id }}</td>
                         <td class="text-center">{{ $emp->fname }}</td>
                         <td class="text-center">{{ $emp->lname }}</td>
+                        <td class="text-center">{{ $emp->telno }}</td>
                         <td class="text-center"><a class="detail_emp">ข้อมูล</a></td>
                     </tr>
                     @endforeach
