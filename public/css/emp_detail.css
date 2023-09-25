@@ -1,0 +1,21 @@
+
+h1,h2{
+    text-align: center;
+}
+.container{
+    padding: 2em;
+}
+
+#topichead{
+    font-size: 30px;
+}
+#showname{
+    font-size: 20px;
+}
+#back-icon{
+    margin-top: 2em;
+    margin-left: 2em;
+}
+.editbtn{
+    margin: 15px;
+}

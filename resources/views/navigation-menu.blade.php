@@ -17,10 +17,10 @@
                     <x-nav-link href="{{ route('mng') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Home') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('mng_employee') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('manager_emp_check') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Employee') }}
                     </x-nav-link>
-                    <x-nav-link href="#" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('toIngredient') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Ingredient') }}
                     </x-nav-link>
                 </div>

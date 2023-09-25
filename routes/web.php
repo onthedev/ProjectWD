@@ -5,6 +5,7 @@ use App\Http\Controllers\empController;
 use App\Http\Controllers\mngController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\mngEmpController;
+use App\Http\Controllers\IngredientController;
 use App\Models\Tambon;
 
 /*
@@ -29,14 +30,28 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [RoleController::class, "index"])->name('dashboard');
 
+    //ingredient
+    Route::get('/manager/ingredient', [IngredientController::class, "toIngredient"])->name('toIngredient');
+    Route::get('/manager/addingredient',[IngredientController::class,'toAddList'])->name('toAddList');
+    Route::post('/add',[IngredientController::class,'addOrder'])->name('addOrder');
+    Route::post('/create',[IngredientController::class,'create'])->name('create');
+    Route::get('/orderhistory',[IngredientController::class,'history'])->name('history');
+
     Route::get('/emp', [empController::class, "index"])->name('emp');
     Route::get('/mng', [mngController::class, "index"])->name('mng');
-    Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
+    // Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
     Route::get('/manager/employee/check', [mngController::class, "manager_emp_check"])->name('manager_emp_check');
     Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
     Route::get('/manager/employee/manage', [mngController::class, "manage_emp"])->name('manage_emp');
     Route::post('/manager/employee/manageemp', [mngController::class, "addTeam"])->name('addTeam');
     Route::get('/manager/addempbyfile', [mngController::class, "addByFile"])->name('addByFile');
+    Route::get('/manager/employeedetail/{emp_id}', [mngController::class, "toDetail"])->name('toDetail');
+    Route::get('/manager/edit/{emp_id}', [mngController::class, "toEdit"])->name('toEdit');
+    Route::post('/manager/edit/{emp_id}', [mngController::class, "edit"])->name('edit');
+
+    Route::get('/addlist', function () {
+        return view('addlist');
+    });
 });
 
 

@@ -40,7 +40,8 @@
                         <td class="text-center">{{ $emp->fname }}</td>
                         <td class="text-center">{{ $emp->lname }}</td>
                         <td class="text-center">{{ $emp->telno }}</td>
-                        <td class="text-center"><a class="detail_emp">ข้อมูล</a></td>
+                        <td class="text-center">
+                        <a href="{{ route('toDetail', ['emp_id'=>$emp->emp_id]) }}" class="detail_emp">เพิ่มเติม</a></td>
                     </tr>
                     @endforeach
             </div>
