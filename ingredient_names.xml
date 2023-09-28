@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.1
+- https://www.phpmyadmin.net
+-
+- Host: 127.0.0.1
+- Generation Time: Sep 28, 2023 at 07:20 PM
+- Server version: 10.4.28-MariaDB
+- PHP Version: 8.2.4
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="ingredient" collation="utf8_general_ci" charset="utf8">
+            <pma:table name="ingredient_names">
+                CREATE TABLE `ingredient_names` (
+                  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+                  `name_eng` varchar(255) NOT NULL,
+                  `name_th` varchar(255) NOT NULL,
+                  `created_at` timestamp NULL DEFAULT NULL,
+                  `updated_at` timestamp NULL DEFAULT NULL,
+                  `deleted_at` timestamp NULL DEFAULT NULL,
+                  `type_id` bigint(20) unsigned NOT NULL,
+                  `unit_id` bigint(20) unsigned NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `ingredient_names_type_id_foreign` (`type_id`),
+                  KEY `ingredient_names_unit_id_foreign` (`unit_id`),
+                  CONSTRAINT `ingredient_names_type_id_foreign` FOREIGN KEY (`type_id`) REFERENCES `ingredient_types` (`id`),
+                  CONSTRAINT `ingredient_names_unit_id_foreign` FOREIGN KEY (`unit_id`) REFERENCES `unit_of_measurements` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+    <!--
+    - Database: 'ingredient'
+    -->
+    <database name="ingredient">
+        <!-- Table ingredient_names -->
+        <table name="ingredient_names">
+            <column name="id">1</column>
+            <column name="name_eng">ribeye</column>
+            <column name="name_th">ริบอาย</column>
+            <column name="created_at">2023-09-28 19:29:10</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">1</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">2</column>
+            <column name="name_eng">oyster blade</column>
+            <column name="name_th">ใบพาย</column>
+            <column name="created_at">2023-09-28 19:29:10</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">1</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">3</column>
+            <column name="name_eng">beef sirloin</column>
+            <column name="name_th">สันนอก</column>
+            <column name="created_at">2023-09-28 19:29:48</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">1</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">4</column>
+            <column name="name_eng">beef tenderloin</column>
+            <column name="name_th">สันใน</column>
+            <column name="created_at">2023-09-28 19:32:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">1</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">5</column>
+            <column name="name_eng">picanha</column>
+            <column name="name_th">โคขุน</column>
+            <column name="created_at">2023-09-28 19:32:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">1</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">6</column>
+            <column name="name_eng">streaky pork</column>
+            <column name="name_th">สามชั้น</column>
+            <column name="created_at">2023-09-28 19:34:35</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">2</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">7</column>
+            <column name="name_eng">pork loin</column>
+            <column name="name_th">สันนอก</column>
+            <column name="created_at">2023-09-28 19:34:35</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">2</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">8</column>
+            <column name="name_eng">pork tenderloin</column>
+            <column name="name_th">สันใน</column>
+            <column name="created_at">2023-09-28 19:34:35</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">2</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">9</column>
+            <column name="name_eng">pork shoulder</column>
+            <column name="name_th">สันคอ</column>
+            <column name="created_at">2023-09-28 19:34:35</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">2</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">10</column>
+            <column name="name_eng">bacon</column>
+            <column name="name_th">เบคอน</column>
+            <column name="created_at">2023-09-28 19:34:35</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">2</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">11</column>
+            <column name="name_eng">chicken breast</column>
+            <column name="name_th">อกไก่</column>
+            <column name="created_at">2023-09-28 19:36:00</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">3</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">12</column>
+            <column name="name_eng">marinated chicken</column>
+            <column name="name_th">ไก่หมัก</column>
+            <column name="created_at">2023-09-28 19:36:14</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">3</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">13</column>
+            <column name="name_eng">shrimp</column>
+            <column name="name_th">กุ้ง</column>
+            <column name="created_at">2023-09-28 19:38:40</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">4</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">14</column>
+            <column name="name_eng">cuttlefish</column>
+            <column name="name_th">หมึกกระดอง</column>
+            <column name="created_at">2023-09-28 19:38:40</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">4</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">15</column>
+            <column name="name_eng">dollyfish</column>
+            <column name="name_th">ปลาดอลลี่</column>
+            <column name="created_at">2023-09-28 19:38:40</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">4</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">16</column>
+            <column name="name_eng">jellyfish</column>
+            <column name="name_th">แมงกะพรุน</column>
+            <column name="created_at">2023-09-28 19:38:40</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">4</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">17</column>
+            <column name="name_eng">mussels</column>
+            <column name="name_th">หอยแมลงภู่</column>
+            <column name="created_at">2023-09-28 19:38:40</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">4</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">18</column>
+            <column name="name_eng">water spinach</column>
+            <column name="name_th">ผักบุ้ง</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">19</column>
+            <column name="name_eng">bok choy</column>
+            <column name="name_th">ผักกวางตุ้ง</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">20</column>
+            <column name="name_eng">napa cabbage</column>
+            <column name="name_th">ผักกาดขาว</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">21</column>
+            <column name="name_eng">wakame</column>
+            <column name="name_th">สาหร่ายวากาเมะ</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">22</column>
+            <column name="name_eng">corn</column>
+            <column name="name_th">ข้าวโพด</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">23</column>
+            <column name="name_eng">carrot</column>
+            <column name="name_th">แครอท</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">24</column>
+            <column name="name_eng">eryngii</column>
+            <column name="name_th">เห็ดออรินจิ</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">25</column>
+            <column name="name_eng">golden needle mushroom</column>
+            <column name="name_th">เห็ดเข็มทอง</column>
+            <column name="created_at">2023-09-28 19:41:49</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">5</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">26</column>
+            <column name="name_eng">watermelon</column>
+            <column name="name_th">แตงโม</column>
+            <column name="created_at">2023-09-28 19:42:54</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">6</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">27</column>
+            <column name="name_eng">pineapple</column>
+            <column name="name_th">สัปปะรด</column>
+            <column name="created_at">2023-09-28 19:42:54</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">6</column>
+            <column name="unit_id">1</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">28</column>
+            <column name="name_eng">rainbow ice cream</column>
+            <column name="name_th">ไอศกรีมรสเรนโบว์</column>
+            <column name="created_at">2023-09-28 19:45:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">7</column>
+            <column name="unit_id">4</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">29</column>
+            <column name="name_eng">chocolate chip ice cream</column>
+            <column name="name_th">ไอศกรีมรสช็อคชิพ</column>
+            <column name="created_at">2023-09-28 19:45:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">7</column>
+            <column name="unit_id">4</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">30</column>
+            <column name="name_eng">lemon ice cream</column>
+            <column name="name_th">ไอศกรีมรสมะนาว</column>
+            <column name="created_at">2023-09-28 19:45:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">7</column>
+            <column name="unit_id">4</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">31</column>
+            <column name="name_eng">chocolate ice cream</column>
+            <column name="name_th">ไอศกรีมรสช็อคโกแลต</column>
+            <column name="created_at">2023-09-28 19:45:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">7</column>
+            <column name="unit_id">4</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">32</column>
+            <column name="name_eng">strawberry ice cream</column>
+            <column name="name_th">ไอศกรีมรสสตอเบอรี่</column>
+            <column name="created_at">2023-09-28 19:45:13</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">7</column>
+            <column name="unit_id">4</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">33</column>
+            <column name="name_eng">water</column>
+            <column name="name_th">น้ำเปล่า</column>
+            <column name="created_at">2023-09-28 19:47:56</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">8</column>
+            <column name="unit_id">3</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">34</column>
+            <column name="name_eng">coca cola</column>
+            <column name="name_th">โค้ก</column>
+            <column name="created_at">2023-09-28 19:47:56</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">8</column>
+            <column name="unit_id">3</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">35</column>
+            <column name="name_eng">tea</column>
+            <column name="name_th">ชา</column>
+            <column name="created_at">2023-09-28 19:47:56</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">8</column>
+            <column name="unit_id">3</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">36</column>
+            <column name="name_eng">fruit punch</column>
+            <column name="name_th">ฟรุตพั้นช์</column>
+            <column name="created_at">2023-09-28 19:47:56</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">8</column>
+            <column name="unit_id">3</column>
+        </table>
+        <table name="ingredient_names">
+            <column name="id">37</column>
+            <column name="name_eng">blue hawaii</column>
+            <column name="name_th">บลูฮาวาย</column>
+            <column name="created_at">2023-09-28 19:47:56</column>
+            <column name="updated_at">NULL</column>
+            <column name="deleted_at">NULL</column>
+            <column name="type_id">8</column>
+            <column name="unit_id">3</column>
+        </table>
+    </database>
+</pma_xml_export>
