@@ -5,12 +5,20 @@ namespace App\Http\Controllers;
 use App\Models\Ingredient_list;
 use App\Models\Ingredient_type;
 use App\Models\UnitOfMeasurement;
+use App\Models\Ingredient_name;
 use Illuminate\Http\Request;
 
 class IngredientController extends Controller
 {
     public function index(){
         return view('addlist');
+    }
+
+    public function showAll(){
+        $allname = Ingredient_name::all();
+        $alltype = Ingredient_type::all();
+        $allunit = UnitOfMeasurement::all();
+        return view('addlist',compact('allname','alltype','allunit'));
     }
 
     //ดึงข้อมูลประวัติไปแสดง
@@ -45,4 +53,6 @@ class IngredientController extends Controller
         return redirect ('./add');
 
     }
+
+
 }
