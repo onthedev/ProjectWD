@@ -31,7 +31,7 @@
             <th>หน่วยวัด</th>
             <th>วันเวลาที่สั่ง</th>
         </tr>
-
+{{--
         @foreach ( $list as $ingre)
         <tr>
             <td>
@@ -50,7 +50,7 @@
                 {{$ingre->updated_at}}
             </td>
         </tr>
-        @endforeach
+        @endforeach --}}
 
     </table>
 </body>

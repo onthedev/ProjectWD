@@ -38,8 +38,8 @@
             <div class="mt-4">
                 <x-label for="role" value="{{ __('Position') }}" />
                 <select class="opt" name="position" id="position" style="width: 400px; border-radius:5px;border-color:rgb(198, 198, 198)">
-                    <option name="emp" id="emp" value="emp">employee</option>
-                    <option name="mng" id="mng"  value="mng">manager</option>
+                    <option value="emp">employee</option>
+                    <option value="mng">manager</option>
                 </select>
             </div>
 

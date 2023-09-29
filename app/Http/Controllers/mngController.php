@@ -88,5 +88,5 @@ class mngController extends Controller
 
         return redirect()->route('manager_emp_emp');
         }
-      
+
 }

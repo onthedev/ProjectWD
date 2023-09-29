@@ -25,6 +25,9 @@
                         <x-nav-link href="#" :active="request()->routeIs('dashboard')">
                             {{ __('check stock ingredient') }}
                         </x-nav-link>
+                        <x-nav-link href="{{ route('tocheckattendance') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('check attendance') }}
+                        </x-nav-link>
                     </div>
                 </div>
 

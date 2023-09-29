@@ -9,7 +9,5 @@ class Addr extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    public function Personel(){
-        return $this->hasMany(person_addrs::class);
-    }
+
 }

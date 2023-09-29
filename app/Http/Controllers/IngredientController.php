@@ -16,10 +16,7 @@ class IngredientController extends Controller
 
     //ดึงข้อมูลประวัติไปแสดง
     public function history(){
-        $list = Ingredient_list::all();
-        $list = Ingredient_list::with('ingredientType')->orderBy('created_at','DESC')->get();
-        $list = Ingredient_list::with('unitOfMeasurement')->get();
-        return view('history',compact('list'));
+        return view('history');
     }
     //รับข้อมูลเพื่อส่งไปยัง database
     public function addOrder(Request $request){

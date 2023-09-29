@@ -37,9 +37,10 @@ Route::middleware([
     Route::post('/create',[IngredientController::class,'create'])->name('create');
     Route::get('/orderhistory',[IngredientController::class,'history'])->name('history');
 
-    Route::get('/emp', [empController::class, "index"])->name('emp');
-    Route::get('/mng', [mngController::class, "index"])->name('mng');
+
+    //manager
     // Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
+    Route::get('/mng', [mngController::class, "index"])->name('mng');
     Route::get('/manager/employee/check', [mngController::class, "manager_emp_check"])->name('manager_emp_check');
     Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
     Route::get('/manager/employee/manage', [mngController::class, "manage_emp"])->name('manage_emp');
@@ -49,16 +50,12 @@ Route::middleware([
     Route::get('/manager/edit/{emp_id}', [mngController::class, "toEdit"])->name('toEdit');
     Route::post('/manager/edit/{emp_id}', [mngController::class, "edit"])->name('edit');
 
-    Route::get('/addlist', function () {
-        return view('addlist');
-    });
+
+    //employee
+    Route::get('/emp', [empController::class, "index"])->name('emp');
+    Route::get('/employee/checkattendance', [empController::class, "tocheckattendance"])->name('tocheckattendance');
+    Route::get('/employee/check_emp_id', [empController::class, "checkEmployeeID"])->name('checkEmployeeID');
+    Route::get('/check-employee', [empController::class, "checkEmployee"])->name('checkEmployee');
+    Route::post('/checkattendance', [empController::class, "checkattendance"])->name('checkattendance');
 });
 
-
-
-Route::get('/tambon', function () {
-    $provinces = Tambon::select('province')->distinct()->get();
-    $amphoes = Tambon::select('amphoe')->distinct()->get();
-    $tambons = Tambon::select('tambon')->distinct()->get();
-    return view("tambon/index", compact('provinces','amphoes','tambons'));
-});

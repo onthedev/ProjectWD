@@ -12,4 +12,8 @@ class Personnel extends Model
     public function person_addr(){
         return $this->belongsTo(personnel::class);
     }
+    public function time_attendances()
+    {
+        return $this->hasMany(time_attendances::class, 'emp_id', 'emp_id');
+    }
 }
