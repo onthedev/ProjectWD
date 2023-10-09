@@ -35,8 +35,7 @@ label{
 }
 .indented-input{
     width: 400px;
-    margin: 10px;
-    margin-left: 50px;
+    margin-left: 1em;
     border-radius: 9px;
 }
 .h3-header{
@@ -69,22 +68,3 @@ label{
     text-align: center;
     align-items: center;
 }
-.manage_emp{
-    margin: 15px;    font-size: 15px;
-    color: white;
-    float: right;
-    background-color: rgb(218, 157, 24);
-    border:none;
-    padding: 5px;
-    border-radius: 9px;
-    cursor: pointer;
-}
-.detail_emp{
-    color: white;
-    background-color: #A73B24;
-    padding: 7px;
-    border-radius: 9px;
-    cursor: pointer;
-}
-
-

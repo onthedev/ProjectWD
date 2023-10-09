@@ -1,8 +1,109 @@
-.subbtn{
-    background-color: #A73B24;
-    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
-    color: #fff;
+
+h2 {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+}
+
+table {
+    width: 100%;
+}
+
+td {
     padding: 10px;
-    border-radius: 9px;
-    margin: 15px;
+}
+
+select,
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="number"] {
+    width: 93%;
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* ทำให้ปุ่มเป็น block element */
+    margin: 0 auto; /* จัดให้ปุ่มอยู่ตรงกลาง */
+}
+
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Primary button style */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Warning button style */
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #d39e00;
+}
+
+/* Danger button style */
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+.back-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+#topic {
+    font-weight:bold;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-left: -30px; /* ปรับการขยับ topic ไปด้านซ้าย */
 }

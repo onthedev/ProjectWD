@@ -1,0 +1,147 @@
+/* ส่วนหัวของหน้าเว็บ */
+header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* ลิงก์ในเมนูนำทาง */
+.navbar-nav .nav-link {
+    color: #333;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #007bff;
+}
+
+/* ปุ่มสั่งวัตถุดิบ */
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* ปุ่มแก้ไข */
+.btn-warning {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.btn-warning:hover {
+    background-color: #d39e00;
+}
+
+/* ปุ่มลบ */
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+
+/* ตาราง */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #f2f2f2;
+    border-bottom: 2px solid #ddd;
+}
+
+.table tr:nth-child(even) {
+    background-color: red;
+}
+
+#submitBtn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#submitBtn:hover {
+    background-color: #0056b3;
+}
+.form-control-center {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+/* Style for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* Style for the container and headings */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Style for the select input */
+.form-select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#submitBtn {
+    background-color: rgb(231, 62, 62);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+#submitBtn:hover {
+    background-color: #c82333;
+}
+

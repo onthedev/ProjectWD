@@ -4,38 +4,50 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Personnel;
 use App\Models\Addr;
+use App\Models\time_attendance;
+
 use Illuminate\Support\Facades\DB;
 
 class mngController extends Controller
 {
     public function index(){
-        return view('mng');
+        $time_attendance = time_attendance::all();
+        return view('mng', compact('time_attendance'));
     }
+
     public function manager_emp_check(){
-        return view('mng_employee_check');
+        $time_attendance = time_attendance::all();
+        return view('mng_employee_check', compact('time_attendance'));
     }
+
     public function manager_emp_emp(){
         $emp = Personnel::all();
-        return view('mng_employee_emp', compact('emp'));
+        $numOfEmp = Personnel::count();
+        return view('mng_employee_emp', compact('emp','numOfEmp'));
     }
+
     public function manage_emp(){
         $newEmpNumber = Personnel::count() + 1;
         $newEmployeeCode = 'EMP' . str_pad($newEmpNumber, 4, '0', STR_PAD_LEFT);
         return view("manage_emp",['newEmployeeCode'=>$newEmployeeCode]);
     }
+
     public function toDetail($emp_id){
         $selectemp = Personnel::where('emp_id', $emp_id)->get();
         $addr = addr::where('emp_id', $emp_id)->get();
         return view('emp_detail',['selectemp'=>$selectemp, 'addr'=>$addr]);
     }
+
     public function toEdit($emp_id){
         $selectemp = Personnel::where('emp_id', $emp_id)->get();
         $addr = addr::where('emp_id', $emp_id)->get();
         return view('edit_emp_detail',['selectemp'=>$selectemp, 'addr'=>$addr]);
     }
+
     public function addByFile(){
         return view('addbyfile');
     }
+
     public function addTeam(Request $request){
         $personel = new personnel;
         $personel->fname = $request->input('fname');
@@ -88,5 +100,30 @@ class mngController extends Controller
 
         return redirect()->route('manager_emp_emp');
         }
+        public function importCsv(Request $request)
+        {
+            // ตรวจสอบว่ามีไฟล์ CSV ถูกอัปโหลด
+            $validator = Validator::make($request->all(), [
+                'csv_file' => 'required|file|mimes:csv,txt',
+            ]);
 
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator);
+            }
+
+            // อ่านไฟล์ CSV
+            $csv = Reader::createFromPath($request->file('csv_file')->getPathname(), 'r');
+            $csv->setHeaderOffset(0);
+
+            // วนลูปผ่านแถวของไฟล์ CSV และเพิ่มข้อมูลในฐานข้อมูล
+            foreach ($csv->getRecords() as $record) {
+                Employee::create([
+                    'name' => $record['name'],
+                    'email' => $record['email'],
+                    // เพิ่มคอลัมน์อื่นๆ ที่คุณต้องการ
+                ]);
+            }
+
+            return redirect()->back()->with('success', 'อัปโหลดไฟล์ CSV เรียบร้อยแล้ว');
+        }
 }

@@ -5,7 +5,7 @@ use App\Http\Controllers\empController;
 use App\Http\Controllers\mngController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\mngEmpController;
-use App\Http\Controllers\IngredientController;
+use App\Http\Controllers\orderController;
 use App\Models\Tambon;
 
 /*
@@ -31,11 +31,14 @@ Route::middleware([
     Route::get('/dashboard', [RoleController::class, "index"])->name('dashboard');
 
     //ingredient
-    Route::get('/manager/ingredient', [IngredientController::class, "toIngredient"])->name('toIngredient');
-    Route::get('/manager/addingredient',[IngredientController::class,'toAddList'])->name('toAddList');
-    Route::post('/add',[IngredientController::class,'addOrder'])->name('addOrder');
-    Route::post('/create',[IngredientController::class,'create'])->name('create');
-    Route::get('/orderhistory',[IngredientController::class,'history'])->name('history');
+    Route::get('/order',[orderController::class,'toView'])->name('toView');
+    Route::get('/order',[orderController::class,'orderlist']);
+    Route::post('/order/add', [orderController::class, 'getOrder'])->name('getOrder');
+    Route::get('/order/delete/{id}', [orderController::class, "deleteList"])->name("order.delete");
+    Route::get('/order/edit/{id}/{amount}',[orderController::class,'edit'])->name('order.edit');
+    Route::post('/order/update', [orderController::class, "update"])->name("order.update");
+    Route::get('/checkstock',[orderController::class,'viewstock'])->name('viewstock');
+    Route::post('/checkstock/update',[orderController::class,'updateStock'])->name('updateStock');
 
 
     //manager
@@ -49,7 +52,8 @@ Route::middleware([
     Route::get('/manager/employeedetail/{emp_id}', [mngController::class, "toDetail"])->name('toDetail');
     Route::get('/manager/edit/{emp_id}', [mngController::class, "toEdit"])->name('toEdit');
     Route::post('/manager/edit/{emp_id}', [mngController::class, "edit"])->name('edit');
-
+    Route::get('/employee/attendance', [mngController::class, "employee_attendace"])->name('employee_attendace');
+    Route::get('import-csv', [mngController::class, "importCsv"])->name('import.csv');
 
     //employee
     Route::get('/emp', [empController::class, "index"])->name('emp');

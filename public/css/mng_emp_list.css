@@ -1,0 +1,72 @@
+ul {
+    cursor: pointer;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+}
+#numOfEmp {
+    margin-left: 3em;
+}
+.containerResult {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    background-color: white;
+    border: 1px solid rgb(232, 232, 232);
+    width: auto;
+}
+
+.indented-input {
+    width: 400px;
+    margin-left: 1em;
+    border-radius: 9px;
+    margin-bottom: 1em;
+}
+.detail_emp {
+    color: white;
+    background-color: #a73b24;
+    padding: 7px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.search_btn {
+    color: white;
+    background-color: #a73b24;
+    padding: 7px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.manage_emp {
+    margin: 5px;
+    font-size: 15px;
+    color: white;
+    float: right;
+    background-color: rgb(218, 157, 24);
+    border: none;
+    padding: 5px;
+    border-radius: 9px;
+    cursor: pointer;
+}
+.container {
+    padding: 1em;
+}
+#topic {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0.5em;
+}

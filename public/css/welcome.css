@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Kanit', sans-serif;
+    background: linear-gradient(45deg, #bb2d3b, #FFC300);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    padding: 0.5em;
+}
+
+#logo {
+    width: 30%;
+}
+p{
+    font-size: 20px;
+}
+#greetuser{
+    display: flex;
+    color:#000000;
+    font-size: 35px;
+    border-radius: 9px;
+    align-items: center;
+    justify-content: center;
+}
+.user_name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bb2d3b;
+    font-size: 35px;
+    text-decoration: underline;
+}
+#login_status{
+    margin-top: 10em;
+}
+.btn{
+    display: flex;
+    width:100%;
+    height: 60px;
+    background-color: #bb2d3b;
+    color: white;
+    border-radius: 9px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.btn:hover{
+    width:100%;
+    background-color: #bb2d3b;
+    color: white;
+    border-radius: 9px;
+}
+.bgcenter{
+    width: 800px;
+}
+#notlogin{
+    margin: 0.5em;
+}

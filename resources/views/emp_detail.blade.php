@@ -14,7 +14,7 @@
 <body>
     <x-app-layout>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+            <div class="bg-white mt-6 overflow-hidden shadow-xl sm:rounded-lg">
                 <div id="back-icon">
                 <a href="{{ route('manager_emp_emp') }}" class="link-with-margin-left">
                     <img class="back-icon" width="30" height="30" src="{{ asset('pics/back-icon.svg') }}" alt="Your SVG Image">

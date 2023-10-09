@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Manager | Add Employee</title>
     <style>
         @import url( {{asset('css/mng_emp.css')}});
@@ -24,14 +24,10 @@
                         </ul>
                     </nav>
                     <div class="container">
-                        <nav class="navbar navbar-light">
-                            <a href="{{ route('manager_emp_emp') }}">
-                                <img class="back-icon" width="30" height="30" src="{{ asset('pics/back-icon.svg') }}" alt="Your SVG Image">
-                            </a>
-                            <a href="{{ route('addByFile') }}" class="btn addfilebtn"><img class="excel-icon" width="30" height="30" src="{{ asset('pics/excel-icon.svg') }}" alt="Your SVG Image">
-                                เพิ่มข้อมูลจากไฟล์</a>
-                          </nav>
-                          <h2 class="text-custom-size">เพิ่มพนักงาน</h2>
+                        <a href="{{ route('manager_emp_emp') }}">
+                            <img class="back-icon" width="30" height="30" src="{{ asset('pics/back-icon.svg') }}" alt="Your SVG Image">
+                        </a>
+                        <h2 id="topic">เพิ่มพนักงาน</h2>
                           <form action="{{ route('addTeam')}}" method="post">
                             @csrf
                             <div class="container border-b p-6 m-2 mx-auto">

@@ -62,15 +62,6 @@ li a {
     border-radius: 9px;
     margin: 15px;
 }
-.back-icon{
-    margin-top: 15px;
-    margin-left: 50px;
-    margin-right: 10px;
-    vertical-align: middle;
-}
-.text-custom-size .addfilebtn{
-    margin-left: 50px;
-}
 .flex-container {
     display: flex;
     align-items: center; /* จัดให้รูปภาพและข้อความอยู่กลางแนวดิ่ง */
@@ -81,12 +72,6 @@ li a {
     flex-direction:row ;
     justify-content: center;
 }
-.addfilebtn{
-    width: 190px;
-    height: 50px;
-    display: flex;
-    align-items: center; /* จัดให้เนื้อหาและรูปอยู่กลางแนวดิ่ง */
-}
 .addfilebtn img
 {
     margin-right: 15px;
@@ -96,4 +81,16 @@ li a {
     height: 45px;
     width: 400px;
     margin-left: 80px;
+}
+.back-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 10px;
+}
+#topic {
+    font-weight:bold;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    margin-left: -30px; /* ปรับการขยับ topic ไปด้านซ้าย */
 }

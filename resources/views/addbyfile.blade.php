@@ -13,8 +13,13 @@
                 <a href="{{ route('manage_emp') }}">
                     <img class="back-icon" width="30" height="30" src="{{ asset('pics/back-icon.svg') }}" alt="Your SVG Image">
                 </a>
-                <h3>เพิ่มข้อมูลจากไฟล์</h3>
-                <input type="file" name="file" id="file">
+                <form action="{{ route('import.csv') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <h3>เพิ่มข้อมูลจากไฟล์</h3>
+                    <p>เพิ่มไฟล์ .csv</p>
+                    <input type="file" name="csv_file" accept=".csv">
+                    <button type="submit">อัปโหลดไฟล์ CSV</button>
+                </form>
             </div>
         </div>
     </x-app-layout>

@@ -1,0 +1,71 @@
+
+
+.bg-white {
+    background-color: #fff;
+}
+.rounded {
+    border-radius: 8px;
+}
+.shadow-lg {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.block {
+    display: block;
+    margin-bottom: 10px;
+}
+.indented-input {
+    padding: 10px;
+}
+.w-100 {
+    width: 100%;
+}
+#checkatbtn {
+    background-color: #c82333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 50px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+label {
+    font-weight: bold;
+}
+select {
+    padding: 10px;
+}
+#topic {
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin: 20px;
+    padding-top: 1em;
+}
+#note {
+    height: 80px;
+}
+#currentDateTime {
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    margin-bottom: 1em;
+
+}
+input[type="text"],
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+

@@ -1,4 +1,16 @@
-<nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="{{ asset('css/menu.css') }}">
+
+</head>
+<body>
+    <nav x-data="{ open: false }" class="bg-white border-b border-gray-100">
         <!-- Primary Navigation Menu -->
         <div class="flex items-center justify-center mt-3 mx-auto max-w-screen-md">
             <a href="{{ route('mng') }}">
@@ -14,13 +26,10 @@
             <div class="flex">
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link href="{{ route('mng') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Home') }}
-                    </x-nav-link>
                     <x-nav-link href="{{ route('manager_emp_check') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Employee') }}
                     </x-nav-link>
-                    <x-nav-link href="{{ route('toIngredient') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="/order" :active="request()->routeIs('dashboard')">
                         {{ __('Ingredient') }}
                     </x-nav-link>
                 </div>
@@ -225,3 +234,9 @@
         </div>
     </div>
 </nav>
+
+
+</body>
+</html>
+
+

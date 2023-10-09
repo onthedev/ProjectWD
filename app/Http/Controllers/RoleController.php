@@ -11,10 +11,10 @@ class RoleController extends Controller
             return redirect()->route('login');
         }
 
-        if (Auth::user()->position == 'emp') {
+        if (Auth::user()->position_id === 1) {
             return redirect()->route('emp');
         }
-        if (Auth::user()->position == 'mng') {
+        if (Auth::user()->position_id === 2) {
             return redirect()->route('mng');
         }
     }
