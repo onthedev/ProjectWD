@@ -27,10 +27,10 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link href="{{ route('manager_emp_check') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Employee') }}
+                        {{ __('จัดการพนักงาน') }}
                     </x-nav-link>
                     <x-nav-link href="/order" :active="request()->routeIs('dashboard')">
-                        {{ __('Ingredient') }}
+                        {{ __('จัดการวัตถุดิบ') }}
                     </x-nav-link>
                 </div>
             </div>

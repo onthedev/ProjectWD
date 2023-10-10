@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Manager | Employee attendance</title>
+    <title>ผู้จัดการ | การมาทำงานของพนักงาน</title>
     <style>
         @import url( {{asset('css/show_attendance.css')}});
     </style>
@@ -16,8 +16,9 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <nav>
                     <ul>
-                        <li><a href="{{ route('manager_emp_check') }}">check employee attendance</a></li>
-                        <li><a href="{{ route('manager_emp_emp') }}">employee</a></li>
+                        <li><a href="{{ route('manager_emp_check') }}">ตรวจสอบการมาทำงานของพนักงาน</a></li>
+                        <li><a href="{{ route('manager_emp_emp') }}">รายชื่อพนักงาน</a></li>
+                        <li><a href="{{ route('checklcs') }}">การยื่นลา</a></li>
                     </ul>
                 </nav>
                 <h1 id="topic">การมาทำงานของพนักงาน</h1>
@@ -36,7 +37,7 @@
                 </div>
 
             {{-- //ส่วนแสดงผลของการค้นหาด้วยdateradio --}}
-                <div class="container" id="showByDate" style="display: none;">
+                <div class="container" id="showByDate" style="display: block;">
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Employee | Check attendance</title>
+    <title>พนักงาน | เช็คการมาทำงาน</title>
 
     <link rel="stylesheet" href="{{ asset('css/checked.css') }}">
 </head>
@@ -14,8 +14,7 @@
     <x-appemp-layout>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white p-8 mt-6 rounded shadow-lg">
-
-                <h1 id="topic">check attendance</h1>
+                <h1 id="topic">เช็คการมาทำงาน</h1>
                 <div class="container flex justify-center items-center h-screen">
                 <form action="{{ route('checkattendance') }}" method="POST">
                     @csrf
@@ -27,24 +26,19 @@
                         <div class="col-6">
                             <label class="block" for="employee_id">รหัสพนักงาน</label>
                             <input type="text"  class="indented-input border rounded p-2"  name="employee_id" id="employee_id" required>
+                            <label class="block" for="note">หมายเหตุ</label>
+                            <input type="text"  class="indented-input border rounded p-2"  name="note" id="note">
+                        </div>
+
+                        <div class="col-6">
                             <label for="time_type" class="block">ช่วงเวลาการทำงาน</label>
                             <select class="block appearance-none bg-white border border-gray-300 hover:border-gray-400 rounded w-100" name="time_type">
                                 <option value="1">เช็คเข้างาน</option>
                                 <option value="2">เช็คเวลาออกงาน</option>
                             </select>
                         </div>
-
-                        <div class="col-6">
-                            <label class="block" for="work_status">สถานะการมาทำงาน</label>
-                            <select class="block appearance-none bg-white border border-gray-300 hover:border-gray-400 rounded w-100" name="work_status">
-                                <option value="1">มาทำงานปกติ</option>
-                                <option value="2">ลา</option>
-                                <option value="3">อื่น ๆ</option>
-                            </select>
-                            <label class="block" for="note">หมายเหตุ</label>
-                            <input type="text"  class="indented-input border rounded p-2"  name="note" id="note">
-                        </div>
-                </div>                </div>
+                </div>
+            </div>
                     <div class="flex justify-center items-center m-2">
                         <br>
                     <button type="submit" id="checkatbtn">เช็คชื่อ</button>

@@ -30,19 +30,12 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', [RoleController::class, "index"])->name('dashboard');
 
-    //ingredient
+Route::middleware(['CheckUser2'])->group(function () {
     Route::get('/order',[orderController::class,'toView'])->name('toView');
     Route::get('/order',[orderController::class,'orderlist']);
     Route::post('/order/add', [orderController::class, 'getOrder'])->name('getOrder');
     Route::get('/order/delete/{id}', [orderController::class, "deleteList"])->name("order.delete");
-    Route::get('/order/edit/{id}/{amount}',[orderController::class,'edit'])->name('order.edit');
     Route::post('/order/update', [orderController::class, "update"])->name("order.update");
-    Route::get('/checkstock',[orderController::class,'viewstock'])->name('viewstock');
-    Route::post('/checkstock/update',[orderController::class,'updateStock'])->name('updateStock');
-
-
-    //manager
-    // Route::get('/manager/employee', [mngController::class, "mng_employee"])->name('mng_employee');
     Route::get('/mng', [mngController::class, "index"])->name('mng');
     Route::get('/manager/employee/check', [mngController::class, "manager_emp_check"])->name('manager_emp_check');
     Route::get('/manager/employee/employee', [mngController::class, "manager_emp_emp"])->name('manager_emp_emp');
@@ -54,12 +47,18 @@ Route::middleware([
     Route::post('/manager/edit/{emp_id}', [mngController::class, "edit"])->name('edit');
     Route::get('/employee/attendance', [mngController::class, "employee_attendace"])->name('employee_attendace');
     Route::get('import-csv', [mngController::class, "importCsv"])->name('import.csv');
+    Route::get('checklcs', [mngController::class, "checklcs"])->name('checklcs');
+});
 
-    //employee
-    Route::get('/emp', [empController::class, "index"])->name('emp');
+Route::middleware(['CheckUser1'])->group(function () {
+    Route::get('/checkstock',[orderController::class,'viewstock'])->name('viewstock');
+    Route::post('/checkstock/update',[orderController::class,'updateStock'])->name('updateStock');
+    Route::get('/emp', [empController::class, "index"])->name('emp')->middleware('CheckUser1');
     Route::get('/employee/checkattendance', [empController::class, "tocheckattendance"])->name('tocheckattendance');
     Route::get('/employee/check_emp_id', [empController::class, "checkEmployeeID"])->name('checkEmployeeID');
     Route::get('/check-employee', [empController::class, "checkEmployee"])->name('checkEmployee');
     Route::post('/checkattendance', [empController::class, "checkattendance"])->name('checkattendance');
+    Route::get('/leave', [empController::class, "tolcs"])->name('tolcs');
+    Route::post('/submitleave', [empController::class, "submitleave"])->name('submitleave');
 });
-
+});

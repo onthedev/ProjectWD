@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Employee | Checkstock</title>
+        <title>พนักงาน | เช็คสต็อควัตถุดิบ</title>
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
@@ -22,7 +22,7 @@
         <div class="bg-white mt-6 overflow-hidden shadow-xl sm:rounded-lg">
         <div class="container">
             <br>
-            <h2>CheckStockวัตถุดิบ</h2>
+            <h2>เช็คสต็อควัตถุดิบ</h2>
             <form action="{{route('updateStock')}}" method="post">
                 @csrf
                 <div class="table-responsive">
@@ -64,7 +64,7 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>เลขที่</th>
+                        <th>ลำดับที่</th>
                         <th>ชื่อวัตถุดิบ (ภาษาอังกฤษ)</th>
                         <th>ชื่อวัตถุดิบ (ภาษาไทย)</th>
                         <th>ในสต๊อก</th>

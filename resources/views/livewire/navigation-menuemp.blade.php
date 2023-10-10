@@ -23,10 +23,13 @@
                     <!-- Navigation Links -->
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link href="{{ route('viewstock') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('check stock ingredient') }}
+                            {{ __('เช็คสต็อควัตถุดิบ') }}
                         </x-nav-link>
                         <x-nav-link href="{{ route('tocheckattendance') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('check attendance') }}
+                            {{ __('เช็คการมาทำงาน') }}
+                        </x-nav-link>
+                        <x-nav-link href="{{ route('tolcs') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('ยื่นลา') }}
                         </x-nav-link>
                     </div>
                 </div>

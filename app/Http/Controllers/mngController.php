@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Personnel;
+use App\Models\Leavecs;
 use App\Models\Addr;
 use App\Models\time_attendance;
 
@@ -125,5 +126,9 @@ class mngController extends Controller
             }
 
             return redirect()->back()->with('success', 'อัปโหลดไฟล์ CSV เรียบร้อยแล้ว');
+        }
+        public function checklcs(){
+            $leave = Leavecs::all();
+            return view('mng_lcs',['leave'=>$leave]);
         }
 }

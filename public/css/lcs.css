@@ -1,0 +1,34 @@
+#topic{
+    font-size: 24px;
+    text-align: center;
+    color: #333;
+    font-weight: bold;
+    margin: 20px;
+    padding-top: 1em;
+}
+.outcontainer{
+    padding: 2em 5em;
+}
+#subbtn{
+    background-color: #c82333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+#note{
+    height: 80px;
+}
+label{
+    font-weight: bold;
+    margin: 5px;
+}
+#annotation{
+    text-indent: 1.5em;
+}

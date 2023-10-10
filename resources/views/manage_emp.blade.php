@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Manager | Add Employee</title>
+    <title>ผู้จัดการ | เพิ่มพนักงาน</title>
     <style>
         @import url( {{asset('css/mng_emp.css')}});
     </style>
@@ -19,8 +19,9 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <nav>
                         <ul>
-                            <li><a href="{{ route('manager_emp_check') }}">check employee attendance</a></li>
-                            <li><a href="{{ route('manager_emp_emp') }}">employee</a></li>
+                            <li><a href="{{ route('manager_emp_check') }}">ตรวจสอบการมาทำงานของพนักงาน</a></li>
+                            <li><a href="{{ route('manager_emp_emp') }}">รายชื่อพนักงาน</a></li>
+                            <li><a href="{{ route('checklcs') }}">การยื่นลา</a></li>
                         </ul>
                     </nav>
                     <div class="container">

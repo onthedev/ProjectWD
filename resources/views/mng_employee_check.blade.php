@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <title>Manager | Employee attendance</title>
+    <title>ผู้จัดการ | การมาทำงานของพนักงาน</title>
     <style>
         @import url( {{asset('css/show_attendance.css')}});
     </style>
@@ -19,8 +19,9 @@
                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                     <nav>
                         <ul>
-                            <li><a href="{{ route('manager_emp_check') }}">check employee attendance</a></li>
-                            <li><a href="{{ route('manager_emp_emp') }}">employee</a></li>
+                            <li><a href="{{ route('manager_emp_check') }}">ตรวจสอบการมาทำงานของพนักงาน</a></li>
+                            <li><a href="{{ route('manager_emp_emp') }}">รายชื่อพนักงาน</a></li>
+                            <li><a href="{{ route('checklcs') }}">การยื่นลา</a></li>
                         </ul>
                     </nav>
                     <h1 id="topic">การมาทำงานของพนักงาน</h1>
@@ -39,7 +40,7 @@
                     </div>
 
                 {{-- //ส่วนแสดงผลของการค้นหาด้วยdateradio --}}
-                    <div class="container" id="showByDate" style="display: none;">
+                    <div class="container" id="showByDate" style="display: block;">
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -47,7 +48,6 @@
                                 <th class="text-center" scope="col">รหัสพนักงาน</th>
                                 <th class="text-center" scope="col">เวลาเข้างาน</th>
                                 <th class="text-center" scope="col">เวลาออกงาน</th>
-                                <th class="text-center" scope="col">สถานะการมาทำงาน</th>
                                 <th class="text-center" scope="col">หมายเหตุ</th>
                             </tr>
                         </thead>
@@ -61,11 +61,6 @@
                                     <td class="text-center">{{ $attendance->emp_id }}</td>
                                     <td class="text-center">{{ $attendance->check_in_time }}</td>
                                     <td class="text-center">{{ $attendance->check_out_time }}</td>
-                                    @if($attendance->work_status==1)
-                                        <td class="text-center"> มาทำงานปกติ</td>
-                                    @else
-                                        <td class="text-center"> ขาด/สาย</td>
-                                    @endif
                                     <td class="text-center">{{ $attendance->note }}</td>
                                     @if ($key > 0)
                                         </tr>
@@ -85,7 +80,6 @@
                                 <th class="text-center" scope="col">วันที่</th>
                                 <th class="text-center" scope="col">เวลาเข้างาน</th>
                                 <th class="text-center" scope="col">เวลาออกงาน</th>
-                                <th class="text-center" scope="col">สถานะการมาทำงาน</th>
                                 <th class="text-center" scope="col">หมายเหตุ</th>
                             </tr>
                         </thead>
@@ -99,11 +93,6 @@
                                     <td class="text-center">{{ $attendance->date }}</td>
                                     <td class="text-center">{{ $attendance->check_in_time }}</td>
                                     <td class="text-center">{{ $attendance->check_out_time }}</td>
-                                    @if($attendance->work_status==1)
-                                    <td class="text-center"> มาทำงานปกติ</td>
-                                    @else
-                                    <td class="text-center"> ขาด/สาย</td>
-                                    @endif
                                     <td class="text-center">{{ $attendance->note }}</td>
                                     @if ($key > 0)
                                         </tr>
